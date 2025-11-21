@@ -1,11 +1,9 @@
 cleanup() {
     # notify-send "quit"
-    notify-send "asdf $1"
-    if [[ $1 != 0 ]]; then
-        name=$(hyprctl workspaces -j | jq --argjson id "$1" '.[] | select(.id == $id) | .name' | tr -d '"' | cut -d":" -f2)
-        hyprctl dispatch togglespecialworkspace "$name"
-        notify-send "fdsa $name"
-    fi
+    # if [[ $1 != 0 ]]; then
+    #     name=$(hyprctl workspaces -j | jq --argjson id "$1" '.[] | select(.id == $id) | .name' | tr -d '"' | cut -d":" -f2)
+    #     hyprctl dispatch togglespecialworkspace "$name"
+    # fi
     rm -r "/tmp/search-scratchpad.lock/"
 }
 
