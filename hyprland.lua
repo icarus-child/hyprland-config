@@ -20,7 +20,6 @@ hl.monitor({
 	position = "0x0",
 	scale = "auto",
 	vrr = 2,
-	cm = "dcip3",
 })
 hl.monitor({
 	output = "HDMI-A-2",
