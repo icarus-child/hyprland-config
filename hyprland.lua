@@ -48,7 +48,7 @@ hl.monitor({
 local terminal = "alacritty"
 local fileManager = "nemo"
 local wallpaperManager = "waypaper"
-local menu = "tofi-drun | xargs hyprctl dispatch exec uwsm app --"
+local menu = [[tofi-drun | xargs -I{} hyprctl dispatch 'hl.exec_cmd("uwsm app -- {}")']]
 
 -------------------
 ---- AUTOSTART ----
@@ -297,9 +297,9 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.swap({ direction = "down" }))
 
 -- Switch monitors
 hl.bind(mainMod .. " + comma", hl.dsp.focus({ monitor = secondaryMonitor }))
-hl.bind(mainMod .. " + comma", hl.dsp.focus({ monitor = primaryMonitor }))
+hl.bind(mainMod .. " + period", hl.dsp.focus({ monitor = primaryMonitor }))
 hl.bind(mainMod .. " + ALT + comma", hl.dsp.focus({ monitor = "left" }))
-hl.bind(mainMod .. " + ALT + comma", hl.dsp.focus({ monitor = "right" }))
+hl.bind(mainMod .. " + ALT + period", hl.dsp.focus({ monitor = "right" }))
 
 hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.window.move({ monitor = secondaryMonitor }))
 hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.window.move({ monitor = primaryMonitor }))
